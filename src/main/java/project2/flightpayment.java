@@ -35,8 +35,12 @@ public class flightpayment {
 	WebElement selectmonth;
 	@FindBy(xpath = "//div[text()='16']")
 	WebElement selectdate;
-	@FindBy(xpath = "//div[@class='css-1dbjc4n r-1awozwy r-19m6qjp r-z2wwpe r-1loqt21 r-18u37iz r-1777fci r-6ity3w r-d9fdf6 r-9qu9m4 r-ah5dr5 r-1otgn73']")
+	@FindBy(xpath = "//div[text()='Continue']")
 	WebElement continueforpayment;
+	@FindBy(xpath = "//button[text()='Book Now']")
+	WebElement booknowbtn;
+	@FindBy(xpath = "//div//div[4]//div[@class='css-76zvg2 r-jwli3a r-poiln3 r-adyw6z r-1kfrs79']")
+	WebElement clickcontpyment;
 	
 	
 	public void selectflightclkcontinue() {
@@ -88,7 +92,17 @@ public class flightpayment {
 	
 	public void continueforpayment() {
 		// TODO Auto-generated method stub
+		continueforpayment.isDisplayed();
 		continueforpayment.click();
 System.out.println(" succesfull entered the details");
+	}
+	public void booknowbtn() {
+		// TODO Auto-generated method stub
+		booknowbtn.click();
+	}
+	public void clickcontpyment() {
+		// TODO Auto-generated method stub
+		clickcontpyment.click();
+		System.out.println(" succesfull entered the details for dummy payment");
 	}
 }

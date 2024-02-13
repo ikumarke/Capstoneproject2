@@ -51,6 +51,7 @@ public class Test1 extends baseclasse {
 		f.clickcontinue();
 		flightpayment p = new flightpayment(driver);
 		p.selectflightclkcontinue();
+		Thread.sleep(3000);
 		p.firstname(prop.getProperty("firstname"));
 		p.Lastname(prop.getProperty("lastname"));
 		p.contactnumber(prop.getProperty("mobileno"));
@@ -60,7 +61,11 @@ public class Test1 extends baseclasse {
 		p.dateofbirth();
 		p.selectmonth();
 		p.selectdate();
+		Thread.sleep(3000);
 		p.continueforpayment();
+		p.booknowbtn();
+		p.clickcontpyment();
+		
 
 	}
 
