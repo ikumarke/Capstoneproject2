@@ -1,4 +1,4 @@
-package project2;
+package SpiceJet;
 
 import static org.testng.Assert.assertEquals;
 

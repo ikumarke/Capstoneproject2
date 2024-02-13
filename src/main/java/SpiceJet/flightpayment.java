@@ -1,9 +1,14 @@
-package project2;
+package SpiceJet;
 
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class flightpayment {
 	public WebDriver driver;
@@ -35,18 +40,32 @@ public class flightpayment {
 	WebElement selectmonth;
 	@FindBy(xpath = "//div[text()='16']")
 	WebElement selectdate;
-	@FindBy(xpath = "//div[text()='Continue']")
+	@FindBy(xpath = "//div[@data-testid='traveller-info-continue-cta']")
 	WebElement continueforpayment;
+	@FindBy(xpath = "//div[@data-testid='add-ons-continue-footer-button'][3]")
+	WebElement clickcontpyment;
 	@FindBy(xpath = "//button[text()='Book Now']")
 	WebElement booknowbtn;
-	@FindBy(xpath = "//div//div[4]//div[@class='css-76zvg2 r-jwli3a r-poiln3 r-adyw6z r-1kfrs79']")
-	WebElement clickcontpyment;
+	@FindBy(id = "selectfrompopup")
+	WebElement clickselect;
+	@FindBy(xpath = "//div[text()='SpiceMax']")
+	WebElement scrollup;
+	@FindBy(xpath = "//p//span[text()='Skip this to skip comfort.']")
+	WebElement skip1;
+	@FindBy(id = "skipfrompopup")
+	WebElement skip2;
+	@FindBy(xpath = "//div[text()='LKW6PHCQ']")
+	WebElement ticketRefno;
+	//div[text()='LKW6PHCQ']
+	
 	
 	
 	public void selectflightclkcontinue() {
 		// TODO Auto-generated method stub
 		selectflightclkcontinue.click();
 		System.out.println("click continue & Enter the passanger detail");
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(15));
+		w.until(ExpectedConditions.elementToBeClickable(firstname));
 	}
 	public void firstname(CharSequence name) {
 		// TODO Auto-generated method stub
@@ -88,21 +107,53 @@ public class flightpayment {
 		// TODO Auto-generated method stub
 		selectdate.isDisplayed();
 		selectdate.click();
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(15));
+		w.until(ExpectedConditions.elementToBeClickable(continueforpayment));
 	}
 	
 	public void continueforpayment() {
 		// TODO Auto-generated method stub
-		continueforpayment.isDisplayed();
 		continueforpayment.click();
 System.out.println(" succesfull entered the details");
+WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(25));
+w.until(ExpectedConditions.elementToBeClickable(clickcontpyment));
 	}
-	public void booknowbtn() {
+	
+	public void scrolldown() {
 		// TODO Auto-generated method stub
-		booknowbtn.click();
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", clickcontpyment);
+		System.out.println("scroll into continuebtn");
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(25));
+		w.until(ExpectedConditions.elementToBeClickable(clickcontpyment));
 	}
 	public void clickcontpyment() {
 		// TODO Auto-generated method stub
 		clickcontpyment.click();
 		System.out.println(" succesfull entered the details for dummy payment");
+		WebDriverWait w = new WebDriverWait(driver, Duration.ofSeconds(25));
+		w.until(ExpectedConditions.elementToBeClickable(skip1));
+	}
+	
+	public void scrollupbtn() {
+		// TODO Auto-generated method stub
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)", scrollup);
+		
+	}
+	
+	public void skip1() {
+		// TODO Auto-generated method stub
+		skip1.click();
+		
+	}
+	public void skip2() {
+		// TODO Auto-generated method stub
+		skip2.click();
+	}
+	public void ticketRefno() {
+		// TODO Auto-generated method stub
+		String text = ticketRefno.getText();
+		System.out.println("Ticket bookiung referance no"+text);
 	}
 }

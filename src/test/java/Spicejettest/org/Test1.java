@@ -1,12 +1,12 @@
-package Project2.org;
+package Spicejettest.org;
 
 import org.testng.annotations.Test;
 
 import Baseclass.baseclasse;
-import project2.Sign_up;
-import project2.flightpayment;
-import project2.login_page;
-import project2.searchforflight;
+import SpiceJet.Sign_up;
+import SpiceJet.flightpayment;
+import SpiceJet.login_page;
+import SpiceJet.searchforflight;
 
 public class Test1 extends baseclasse {
 
@@ -51,7 +51,7 @@ public class Test1 extends baseclasse {
 		f.clickcontinue();
 		flightpayment p = new flightpayment(driver);
 		p.selectflightclkcontinue();
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		p.firstname(prop.getProperty("firstname"));
 		p.Lastname(prop.getProperty("lastname"));
 		p.contactnumber(prop.getProperty("mobileno"));
@@ -63,8 +63,11 @@ public class Test1 extends baseclasse {
 		p.selectdate();
 		Thread.sleep(3000);
 		p.continueforpayment();
-		p.booknowbtn();
+		Thread.sleep(3000);
+		p.scrolldown();
 		p.clickcontpyment();
+		p.skip1();
+		
 		
 
 	}

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Project2.org.Test1">
+      <class name="Spicejettest.org.Test1">
         <methods>
           <include name="login"/>
           <include name="Browsersetup"/>
           <include name="browser_close"/>
         </methods>
-      </class> <!-- Project2.org.Test1 -->
+      </class> <!-- Spicejettest.org.Test1 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

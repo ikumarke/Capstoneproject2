@@ -1,4 +1,4 @@
-package project2;
+package SpiceJet;
 
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
@@ -26,11 +26,11 @@ public class searchforflight {
 	WebElement Todestination;
 	@FindBy(xpath = "//div[@data-testid='departure-date-dropdown-label-test-id']")
 	WebElement Depaturedatebtn;
-	@FindBy(xpath = "//div[5]//div[3]//div[@data-testid='undefined-calendar-day-1']")
+	@FindBy(xpath = "//div[5]//div[3]//div[@data-testid='undefined-calendar-day-19']")
 	WebElement Depaturedateselect;
 	@FindBy(xpath = "//div[@data-testid='return-date-dropdown-label-test-id']")
 	WebElement returndatebtn;
-	@FindBy(xpath = "//div[6]//div[3]//div[@data-testid='undefined-calendar-day-30']")
+	@FindBy(xpath = "//div[7]//div[3]//div[@data-testid='undefined-calendar-day-30']")
 	WebElement returndateselect;
 	@FindBy(xpath = "//body//div//div//div//div[3]//div[2]//div[6]//div[1]//div//div//div[1]//div[2]//div[@style='cursor: pointer;']")
 	WebElement seniorcitizen;
